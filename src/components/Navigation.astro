@@ -1,0 +1,28 @@
+---
+type Point = {
+    name: string
+}
+
+const points: Point[] = [
+    {name: 'Home'},
+    {name: 'Projects'},
+    {name: 'Blog'},
+    {name: 'About'},
+]
+---
+
+<ul>
+    { points.map(point =>
+        <li class="
+            flex 
+            items-center 
+            gap-2 
+            before:aspect-square 
+            before:w-5 
+            before:bg-black 
+            before:rounded-full"
+        >
+            {point.name}
+        </li>
+    )}
+</ul>

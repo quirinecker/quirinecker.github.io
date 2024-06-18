@@ -1,0 +1,32 @@
+---
+const count = 5
+---
+
+<div> {count} </div>
+
+<script>
+
+function increase(container: HTMLElement) {
+    if (container.textContent === null) {
+        return
+    }
+
+    let current = parseInt(container.textContent)
+    current++
+    container.textContent = current + ""
+}
+
+window.addEventListener('load', () => {
+    const container = document.querySelector('div')
+    if (container === null) {
+        return
+    }
+
+    container.addEventListener('click', () => {
+        increase(container)
+    })
+
+})
+</script>
+
+
