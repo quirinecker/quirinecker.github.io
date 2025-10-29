@@ -1,0 +1,24 @@
+---
+import type { Project } from '../utils/types';
+
+interface Props {
+	project: Project;
+}
+
+const { project } = Astro.props;
+
+---
+
+<section class="card bg-base-100 w-96 shadow-sm flex flex-col overflow-hidden">
+	<figure class="aspect-video w-full">
+
+		{project.picture
+			? <img src={project.picture} alt="" class="w-full" transition:name="profile">
+			: <div class="w-full h-full bg-primary"></div> }
+
+	</figure>
+	<div class="card-body">
+		<h1 class="card-title">{project.name}</h1>
+		<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae nesciunt molestias, veniam id debitis pariatur recusandae ad doloribus asperiores excepturi, corporis autem laudantium nostrum necessitatibus ut saepe nobis! Quia, et.</p>
+	</div>
+</section>

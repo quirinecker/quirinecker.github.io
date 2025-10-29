@@ -1,13 +1,15 @@
 ---
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 ---
 
-<html lang="en" transition-direction="forward">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Astro View Transition Demo</title>
   </head>
-  <body class="flex items-center justify-center h-screen bg-background">
+  <body class="h-screen bg-background">
+	<ClientRouter fallback="none"/>
     <slot />
   </body>
 </html>

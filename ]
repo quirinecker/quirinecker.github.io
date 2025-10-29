@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { BookMarked } from "@lucide/astro";
+
+type Project = {
+	name: string;
+	picture: string | undefined;
+}
+
+const projects = [
+	{}
+]
+---
+<Layout>
+	<nav class="w-full flex p-5 gap-5">
+		<a href="/">
+			<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile.png" alt="" transition:name="profile">
+		</a>
+		<div class="flex flex-col justify-center" >
+			<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
+			<h2 class="text-primary flex items-center gap-1" transition:name="projects"><BookMarked class="size-4"/> Projects</h2>
+		</div>
+	</nav>
+
+	<main>
+		<section class="card"></section>
+	</main>
+</Layout>
