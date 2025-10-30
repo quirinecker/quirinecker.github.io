@@ -8,6 +8,7 @@ const projects: Project[] = [
 	{ name: "quirinecker/dotfiles", picture: undefined },
 	{ name: "quirinecker/docki", picture: "/docki.png" },
 	{ name: "quirinecker/dayplanner", picture: undefined },
+	{ name: "quirinecker/dwa", picture: "/dwa.png" },
 	{ name: "implodium/implo-invite", picture: undefined },
 	{ name: "implodium/implo-place", picture: undefined },
 	{ name: "implodium/implo-vote-web", picture: undefined}
@@ -15,19 +16,26 @@ const projects: Project[] = [
 ---
 
 <Layout>
-	<nav class="w-full flex p-5 gap-5">
-		<a href="/">
-			<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile.png" alt="" transition:name="profile">
-		</a>
-		<div class="flex flex-col justify-center" >
-			<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
-			<h2 class="text-primary flex items-center gap-1" transition:name="projects"><BookMarked class="size-4"/> Projects</h2>
-		</div>
-	</nav>
+	<div class="flex flex-col gap-5">
 
-	<div class="w-full flex justify-center items-center">
-		<main class="w-8/10 flex flex-row justify-center flex-wrap gap-3">
-			{projects.map(project => <ProjectCard project={project} />)}
-		</main>
+		<nav class="w-full flex p-5 gap-5">
+			<a href="/">
+				<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile.png" alt="" transition:name="profile">
+			</a>
+			<div class="flex flex-col justify-center" >
+				<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
+				<h2 class="text-primary flex items-center gap-1" transition:name="projects"><BookMarked class="size-4"/> Projects</h2>
+			</div>
+		</nav>
+
+		<div class="w-full flex justify-center items-center">
+			<main class="w-8/10 flex flex-row justify-center flex-wrap gap-3">
+				{projects.map(project => <ProjectCard project={project} />)}
+			</main>
+		</div>
+
+		<footer class="border-t-accent">
+
+		</footer>
 	</div>
 </Layout>
