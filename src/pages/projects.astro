@@ -5,9 +5,12 @@ import type { Project } from "../utils/types";
 import ProjectCard from "../components/ProjectCard.astro";
 
 const projects: Project[] = [
-	{ name: "quirinecker/dotfiles", picture: "https://www.microtool.de/wp-content/uploads/2023/08/what-is-configuration-management.png" },
-	{ name: "quirinecker/docki", picture: undefined },
-	{ name: "quirinecker/dayplanner", picture: undefined }
+	{ name: "quirinecker/dotfiles", picture: undefined },
+	{ name: "quirinecker/docki", picture: "/docki.png" },
+	{ name: "quirinecker/dayplanner", picture: undefined },
+	{ name: "implodium/implo-invite", picture: undefined },
+	{ name: "implodium/implo-place", picture: undefined },
+	{ name: "implodium/implo-vote-web", picture: undefined}
 ]
 ---
 
@@ -23,7 +26,7 @@ const projects: Project[] = [
 	</nav>
 
 	<div class="w-full flex justify-center items-center">
-		<main class="w-6/10 flex flex-row justify-center flex-wrap gap-3">
+		<main class="w-8/10 flex flex-row justify-center flex-wrap gap-3">
 			{projects.map(project => <ProjectCard project={project} />)}
 		</main>
 	</div>
