@@ -23,7 +23,7 @@ const lanugages = Object.entries(githubLanguageData).map(([language, data]) => (
 	<div class="aspect-video w-full bg-cover" class:list={project.picture ? ['with-image'] : ['bg-primary']}>
 	</div>
 	<div class="card-body">
-		<h1 class="card-title"> <a href={githubData.html_url}> {project.name} </a></h1>
+		<h1 class="card-title"> <a href={githubData.html_url} class="link"> {project.name} </a></h1>
 		<div class="flex gap-2 flex-row flex-wrap">
 			{lanugages.map(l => {
 				return <span class="flex gap-1 items-center"><span class=`status` style={{backgroundColor: l.color.color}}></span> {l.language}</span>
