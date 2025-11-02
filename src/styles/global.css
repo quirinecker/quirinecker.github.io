@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+@plugin "@tailwindcss/typography";
 
 @theme {
 	--color-background: #11111B;

@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro"
-
-
+import {Content as AboutContent} from "../markdown/about.md"
 ---
 
 <Layout>
@@ -13,11 +12,18 @@ import Layout from "../layouts/Layout.astro"
 				</a>
 			</section>
 			<section class="text-white grow flex justify-center flex-col gap-2 max-w-2xl">
-				<h1 class="text-4xl" transition:name="name">Quirin Ecker <a href="https://github.com/quirinecker" class="btn btn-square"><img height="20" src="https://cdn.simpleicons.org/github/ffffff?viewbox=auto" class="size-3/4"/></button></a>
-				<p class="text-base text-neutral-content">
-					Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta eligendi rerum assumenda laboriosam. Dolore reprehenderit necessitatibus ea culpa praesentium deserunt omnis aut, voluptatem labore quae nostrum cupiditate error commodi? Accusamus.
-				</p>
+				<h1 class="text-4xl" transition:name="name">
+					Quirin Ecker
+					<a href="https://github.com/quirinecker" class="btn btn-square">
+						<img height="20" src="https://cdn.simpleicons.org/github/ffffff?viewbox=auto" class="size-3/4"/>
+					</a>
+				</h1>
+				<div class="prose prose-xl prose-p:text-xl">
+					<AboutContent/>
+				</div>
 			</section>
 		</main>
 	</div>
 </Layout>
+
+<script src="../utils/escapeKeybind.ts"></script>
