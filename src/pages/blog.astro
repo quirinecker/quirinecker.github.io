@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro"
 import BlogCard from "../components/BlogCard.astro";
 import { Newspaper } from "@lucide/astro";
-import type { MarkdownLayoutProps } from "astro";
+import type { MarkdownInstance } from "astro";
 
-const blogs: MarkdownLayoutProps<{title: string, banner: string, description: string}>[]
-	= Object.entries(import.meta.glob('../markdown/blogs/*.md', {eager: true})) as any
+const blogs
+	= Object.entries(import.meta.glob<MarkdownInstance<{title: string, banner: string, description: string}>>('../markdown/blogs/*.md', {eager: true}))
+
 ---
 
 <Layout>
@@ -23,7 +24,7 @@ const blogs: MarkdownLayoutProps<{title: string, banner: string, description: st
 
 		<div class="w-full flex justify-center items-center">
 			<main class="w-8/10 flex flex-row justify-center flex-wrap gap-3">
-				{blogs.map(blog => <BlogCard blog={blog} />)}
+				{blogs.map(([_, blog]) => <BlogCard blog={blog} />)}
 			</main>
 		</div>
 
