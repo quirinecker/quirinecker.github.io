@@ -1,19 +1,19 @@
 ---
 import type { MarkdownInstance } from 'astro';
+import { basename } from 'path';
 
 interface Props {
 	blog: MarkdownInstance<{ title: string, banner: string, description: string }>;
 }
 
 const { blog } = Astro.props;
-console.log(blog.frontmatter)
 ---
 
 <section class="card bg-base-100 w-70 shadow-sm flex flex-col overflow-hidden">
 	<div class="aspect-video w-full bg-cover" class:list={blog.frontmatter.banner ? ['with-image'] : ['bg-primary']}>
 	</div>
 	<div class="card-body">
-		<h1 class="card-title"> <a href={blog.file} class="link"> {blog.frontmatter.title} </a></h1>
+		<h1 class="card-title"> <a href={`/blog/${basename(blog.file).replace('.md', '')}`} class="link"> {blog.frontmatter.title} </a></h1>
 		<p>{blog.frontmatter.description}</p>
 	</div>
 </section>

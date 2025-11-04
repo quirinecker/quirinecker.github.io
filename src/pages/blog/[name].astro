@@ -1,0 +1,62 @@
+---
+import { type MarkdownInstance } from 'astro';
+import { basename } from 'path';
+import Layout from '../../layouts/Layout.astro';
+import { Newspaper } from '@lucide/astro';
+
+
+export async function getStaticPaths() {
+	const blogs = Object.entries(
+		import.meta.glob<MarkdownInstance<{
+			title: string,
+			banner: string,
+			description: string
+		}>>('../..//markdown/blogs/*.md', {eager: true})
+	)
+
+	const blogEntries = blogs.map(([path]) => ({
+		params: { name: basename(path).replace('.md', '') },
+	}))
+
+	console.log(blogEntries)
+
+	return blogEntries
+}
+
+const {name} = Astro.params
+const {Content, frontmatter}: {Content: any, frontmatter: {title :string, banner: string, description: string}} = await import(`../../markdown/blogs/${name}.md`)
+---
+
+<Layout>
+	<div class="flex flex-col gap-5">
+
+		<nav class="w-full flex p-5 gap-5">
+			<a href="/">
+				<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile.png" alt="" transition:name="profile">
+			</a>
+			<div class="flex flex-col justify-center" >
+				<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
+				<h2 class="text-primary flex items-center gap-1" transition:name="projects"><Newspaper class="size-4"/> Blog</h2>
+			</div>
+		</nav>
+
+		<div class="w-full flex justify-center items-center">
+			<main class="w-6/10 flex flex-row justify-center flex-wrap gap-3">
+				<div class="w-full aspect-video" class:list={frontmatter.banner ? ['with-image'] : ['bg-primary']} ></div>
+				<Content />
+			</main>
+		</div>
+
+		<footer class="border-t-accent">
+
+		</footer>
+	</div>
+</Layout>
+
+<style define:vars={{banner: `url(${frontmatter.banner})`}}>
+
+.with-image {
+	background-image: var(--banner);
+}
+
+</style>
