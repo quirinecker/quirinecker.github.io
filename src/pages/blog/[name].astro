@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 }
 
 const {name} = Astro.params
-const {Content, frontmatter}: {Content: any, frontmatter: {title :string, banner: string, description: string, date: string}} = await import(`../../markdown/blogs/${name}.md`)
+const {Content, frontmatter }: MarkdownInstance<{title :string, banner: string, description: string, date: string}> = await import(`../../markdown/blogs/${name}.md`)
 
 function formatDate(date: string) {
 	const dateObject = new Date(date)
