@@ -11,14 +11,14 @@ import {Content as AboutContent} from "../markdown/about.md"
 					<img src="/profile.png" alt="Picture of me" class="rounded-full overflow-hidden size-45 transition-all" transition:name="profile">
 				</a>
 			</section>
-			<section class="text-white grow flex justify-center flex-col gap-2 max-w-2xl">
-				<h1 class="text-4xl" transition:name="name">
+			<section class="text-white grow flex justify-center flex-col gap-2 desktop:max-w-2xl mobile:max-w-9/10">
+				<h1 class="desktop:text-4xl mobile:text-6xl" transition:name="name">
 					Quirin Ecker
 					<a href="https://github.com/quirinecker" class="btn btn-square">
 						<img height="20" src="https://cdn.simpleicons.org/github/ffffff?viewbox=auto" class="size-3/4"/>
 					</a>
 				</h1>
-				<div class="prose prose-xl prose-p:text-xl">
+				<div class="prose desktop:prose-xl desktop:prose-p:text-xl mobile:prose-p:text-4xl mobile:prose-2xl">
 					<AboutContent/>
 				</div>
 			</section>
