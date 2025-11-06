@@ -12,18 +12,19 @@ const blogs
 <Layout>
 	<div class="flex flex-col gap-5">
 
-		<nav class="w-full flex p-5 gap-5">
-			<a href="/">
+		<nav class="w-full p-5">
+			<a href="/" class="w-full flex flex-row gap-5">
 				<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile.png" alt="" transition:name="profile">
+				<div class="flex flex-col justify-center" >
+					<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
+					<h2 class="text-primary flex items-center gap-1" transition:name="projects"><Newspaper class="size-4"/> Blog</h2>
+				</div>
 			</a>
-			<div class="flex flex-col justify-center" >
-				<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
-				<h2 class="text-primary flex items-center gap-1" transition:name="projects"><Newspaper class="size-4"/> Blog</h2>
-			</div>
 		</nav>
 
 		<div class="w-full flex justify-center items-center">
-			<main class="w-8/10 flex flex-row justify-center flex-wrap gap-3">
+			<main class="desktop:w-8/10 mobile:w-9/10 flex flex-row justify-center flex-wrap gap-3">
+				{blogs.length === 0 && <div class="text-center text-accent">No Blogs are available at this moement</div>}
 				{blogs.map(([_, blog]) => <BlogCard blog={blog} />)}
 			</main>
 		</div>

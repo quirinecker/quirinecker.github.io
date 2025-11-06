@@ -10,8 +10,11 @@ const { blog } = Astro.props;
 ---
 
 <section class="card bg-base-100 w-70 shadow-sm flex flex-col overflow-hidden">
-	<div class="aspect-video w-full bg-cover" class:list={blog.frontmatter.banner ? ['with-image'] : ['bg-primary']}>
-	</div>
+	<div
+		class="aspect-video w-full bg-cover"
+		class:list={blog.frontmatter.banner ? ['with-image'] : ['bg-primary']}
+		transition:name={`banner-${basename(blog.file).replace('.md', '')}`}
+	></div>
 	<div class="card-body">
 		<h1 class="card-title"> <a href={`/blog/${basename(blog.file).replace('.md', '')}`} class="link"> {blog.frontmatter.title} </a></h1>
 		<p>{blog.frontmatter.description}</p>

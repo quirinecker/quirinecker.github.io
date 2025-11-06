@@ -5,4 +5,6 @@
 @theme {
 	--color-background: #11111B;
 	--color-primary: #E2B4D7;
+	--breakpoint-mobile: 0px;
+	--breakpoint-desktop: 1024px;
 }

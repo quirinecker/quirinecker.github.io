@@ -50,8 +50,12 @@ function formatDate(date: string) {
 		</nav>
 
 		<div class="w-full flex justify-center items-center">
-			<main class="w-6/10 flex flex-col gap-5">
-				<div class="w-full aspect-10/4 rounded-xl" class:list={frontmatter.banner ? ['with-image'] : ['bg-primary']} ></div>
+			<main class="desktop:w-6/10 mobile:w-9/10 flex flex-col gap-5">
+				<div
+					class="w-full aspect-10/4 rounded-xl"
+					class:list={frontmatter.banner ? ['with-image'] : ['bg-primary']}
+					transition:name={`banner-${name}`}
+				></div>
 				<div class="max-w-full! prose">
 					<span>{formatDate(frontmatter.date)}</span>
 					<Content />
