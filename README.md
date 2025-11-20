@@ -1,34 +1,25 @@
-# Astro Starter Kit: Basics
+# quirinecker.github.io
 
-```sh
-bun create astro@latest -- --template basics
-```
+This is my person website. It's built with [Astro](https://astro.build) and hosted on [Github Pages](quirinecker.github.io). It contains
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+* A blog (mostly empty so far)
+* A about page
+* A projects page with the projects I am proud of
 
-## 🚀 Project Structure
+## Writing blogs
 
-Inside of your Astro project, you'll see the following folders and files:
+Blogs are located in `src/markdown/blogs/` and are written in [Markdown](https://www.markdownguide.org/basic-syntax/) format. They should include the following frontmatter.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+---
+title: <title>
+banner: <path to banner (absolute from public folder)>
+description: <description>
+date: <date in format 2023-02-02>
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+After adding a new blog, it should show up on the blog page after the next build.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -40,7 +31,3 @@ All commands are run from the root of the project, from a terminal:
 | `bun preview`         | Preview your build locally, before deploying     |
 | `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
