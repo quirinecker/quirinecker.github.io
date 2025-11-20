@@ -10,12 +10,14 @@ This is my person website. It's built with [Astro](https://astro.build) and host
 
 Blogs are located in `src/markdown/blogs/` and are written in [Markdown](https://www.markdownguide.org/basic-syntax/) format. They should include the following frontmatter.
 
+```markdown
 ---
 title: <title>
 banner: <path to banner (absolute from public folder)>
 description: <description>
 date: <date in format 2023-02-02>
 ---
+```
 
 After adding a new blog, it should show up on the blog page after the next build.
 
