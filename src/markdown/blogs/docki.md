@@ -1,5 +1,6 @@
 ---
 title: Docki
+draft: true
 banner: /dwa.png
 description: This is the readme of one of my projects
 date: 2023-02-02

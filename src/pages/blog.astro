@@ -5,7 +5,8 @@ import { Newspaper } from "@lucide/astro";
 import type { MarkdownInstance } from "astro";
 
 const blogs
-	= Object.entries(import.meta.glob<MarkdownInstance<{title: string, banner: string, description: string}>>('../markdown/blogs/*.md', {eager: true}))
+= Object.entries(import.meta.glob<MarkdownInstance<{title: string, banner: string, description: string, draft: boolean}>>('../markdown/blogs/*.md', {eager: true}))
+.filter(([_, blog]) => !blog.frontmatter.draft)
 
 ---
 

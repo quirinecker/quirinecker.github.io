@@ -10,13 +10,16 @@ export async function getStaticPaths() {
 		import.meta.glob<MarkdownInstance<{
 			title: string,
 			banner: string,
-			description: string
+			description: string,
+			draft: boolean
 		}>>('../..//markdown/blogs/*.md', {eager: true})
 	)
 
-	const blogEntries = blogs.map(([path]) => ({
-		params: { name: basename(path).replace('.md', '') },
-	}))
+	const blogEntries = blogs
+		.filter(([_, b]) => !b.frontmatter.draft)
+		.map(([path]) => ({
+			params: { name: basename(path).replace('.md', '') },
+		}))
 
 	return blogEntries
 }
@@ -34,12 +37,12 @@ function formatDate(date: string) {
 }
 ---
 
-<Layout>
+<Layout title={frontmatter.title}>
 	<div class="flex flex-col gap-5">
 
 		<nav class="w-full flex p-5 gap-5">
 			<a href="/">
-				<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile80.png" alt="" transition:name="profile">
+				<img class="rounded-full overflow-hidden size-16 transition-all" src="/profile80.webp" alt="" transition:name="profile">
 			</a>
 			<div class="flex flex-col justify-center" >
 				<h1 class="text-2xl" transition:name="name">Quirin Ecker</h1>
