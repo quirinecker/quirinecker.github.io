@@ -5,19 +5,19 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Home">
 	<div class="flex justify-center items-center h-screen w-screen ">
-		<main class="flex flex-row gap-5 desktop:flex-row mobile:flex-col desktop:w-auto mobile:w-9/10 mobile:items-center desktop:items-start">
+		<main class="flex flex-row gap-5 desktop:flex-row mobile:flex-col tiny:flex-col desktop:w-auto mobile:w-9/10 mobile:items-center tiny:w-9/10 tiny:items-center desktop:items-start">
 			<section>
 				<div class="rounded-full overflow-hidden size-45 transition-all" transition:name="profile">
 					<img src="/profile80.webp" alt="Picture of me">
 				</div>
 			</section>
-			<section class="text-white grow flex justify-center flex-col gap-2 mobile:w-full desktop:w-auto">
+			<section class="text-white grow flex justify-center flex-col gap-2 mobile:w-full tiny:w-full desktop:w-auto">
 				<h1 class="text-4xl" transition:name="name">Quirin Ecker <a href="https://github.com/quirinecker" class="btn btn-square"><img height="20" src="https://cdn.simpleicons.org/github/ffffff?viewbox=auto" alt="GitHub" class="size-3/4"/></button></a>
 				<h2 class="text-2xl text-primary">Software Developer / Student</h2>
-				<div class="flex gap-2 mobile:flex-col desktop:flex-row">
-					<a href="projects" class="btn btn-primary btn-md desktop:btn-md mobile:btn-xl mobile:grow" transition:name="projects"><BookMarked class="size-4"/> Projects</a>
-					<a href="blog" class="btn btn-primary desktop:btn-md mobile:btn-xl mobile:grow"><Newspaper class="size-4"/> Blog</a>
-					<a href="about" class="btn btn-primary desktop:btn-md mobile:btn-xl mobile:grow"><User class="size-4"/> About</a>
+				<div class="flex gap-2 mobile:flex-col tiny:flex-col desktop:flex-row">
+					<a href="projects" class="btn btn-primary btn-md desktop:btn-md tiny:btn-xl mobile:btn-xl tiny:grow mobile:grow" transition:name="projects"><BookMarked class="size-4"/> Projects</a>
+					<a href="blog" class="btn btn-primary desktop:btn-md mobile:btn-xl mobile:grow tiny:btn-xl tiny:grow"><Newspaper class="size-4"/> Blog</a>
+					<a href="about" class="btn btn-primary desktop:btn-md mobile:btn-xl mobile:grow tiny:btn-xl tiny:grow"><User class="size-4"/> About</a>
 				</div>
 			</section>
 		</main>

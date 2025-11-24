@@ -26,7 +26,7 @@ const blogs
 		</nav>
 
 		<div class="w-full flex justify-center items-center">
-			<main class="desktop:w-8/10 mobile:w-9/10 flex flex-row justify-center flex-wrap gap-3">
+			<main class="desktop:w-8/10 mobile:w-9/10 tiny:w-9/10 flex flex-row justify-center flex-wrap gap-3">
 				{blogs.length === 0 && <div class="text-center text-accent">No Blogs are available at this moement</div>}
 				{blogs.map(([_, blog]) => <BlogCard blog={blog} />)}
 			</main>

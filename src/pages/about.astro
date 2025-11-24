@@ -4,8 +4,8 @@ import { Content as AboutContent } from "../markdown/about.md"
 ---
 
 <Layout title="About">
-	<div class="flex justify-center items-center h-screen w-screen">
-		<main class="flex flex-row gap-5 mobile:flex-col desktop:flex-row desktop:w-auto mobile:w-9/10 desktop:items-start mobile:items-center">
+	<div class="flex justify-center desktop:items-center mobile:items-center tiny:items-start min-h-screen min-w-screen">
+		<main class="flex flex-row gap-5 mobile:flex-col tiny:flex-col desktop:flex-row desktop:w-auto mobile:w-9/10 desktop:items-start mobile:items-center tiny:items-center my-10">
 			<section>
 				<a href="/">
 					<div class="rounded-full overflow-hidden size-45 transition-all" transition:name="profile">
@@ -13,8 +13,8 @@ import { Content as AboutContent } from "../markdown/about.md"
 					</div>
 				</a>
 			</section>
-			<section class="text-white grow flex justify-center flex-col gap-2 desktop:max-w-2xl mobile:max-w-9/10">
-				<h1 class="desktop:text-4xl mobile:text-4xl" transition:name="name">
+			<section class="text-white grow flex justify-center flex-col gap-2 desktop:max-w-2xl mobile:max-w-9/10 tiny:max-w-9/10">
+				<h1 class="desktop:text-4xl mobile:text-4xl tiny:text-4xl" transition:name="name">
 					Quirin Ecker
 					<a href="https://github.com/quirinecker" class="btn btn-square">
 						<img height="20" src="https://cdn.simpleicons.org/github/ffffff?viewbox=auto" class="size-3/4"/>
