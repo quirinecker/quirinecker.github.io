@@ -21,7 +21,10 @@ date: <date in format 2023-02-02>
 
 After adding a new blog, it should show up on the blog page after the next build.
 
-## Commands
+## Running Locally
+
+> [!NOTE]
+> When running in development mode, the site will use a local json file for the github api. This is because the api access is rate limited.
 
 All commands are run from the root of the project, from a terminal:
 
